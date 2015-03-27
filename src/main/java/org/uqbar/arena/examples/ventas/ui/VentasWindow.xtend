@@ -1,4 +1,4 @@
-package org.uqbar.arena.examples.ventas
+package org.uqbar.arena.examples.ventas.ui
 
 import org.uqbar.arena.bindings.NotNullObservable
 import org.uqbar.arena.examples.ventas.model.DetalleProducto
@@ -8,14 +8,11 @@ import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.widgets.Label
 import org.uqbar.arena.widgets.List
 import org.uqbar.arena.widgets.Panel
+import org.uqbar.arena.widgets.RadioSelector
 import org.uqbar.arena.widgets.Spinner
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.windows.WindowOwner
-import org.uqbar.arena.examples.ventas.model.Cliente
-import org.uqbar.arena.bindings.PropertyAdapter
-import org.uqbar.arena.widgets.RadioSelector
-import org.uqbar.lacar.ui.impl.jface.radiogroup.RadioGroup
 
 /**
  * @author jfernandes

@@ -1,4 +1,4 @@
-package org.uqbar.arena.examples.ventas
+package org.uqbar.arena.examples.ventas.ui
 
 import org.uqbar.arena.bindings.DateAdapter
 import org.uqbar.arena.examples.ventas.model.DetalleProducto

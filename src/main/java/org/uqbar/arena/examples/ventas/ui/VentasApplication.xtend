@@ -1,7 +1,6 @@
 package org.uqbar.arena.examples.ventas.ui
 
 import org.uqbar.arena.Application
-import org.uqbar.arena.examples.ventas.VentasWindow
 
 /**
  * @author jfernandes
