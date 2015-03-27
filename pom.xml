@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>ventas-ui-arena-xtend</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>ventas-ui-arena-xtend</name>
+	<description>Aplicación en Arena de complejidad media que muestra quick search, varios application models y navegacion.</description>
+
+	<parent>
+		<groupId>org.uqbar-project</groupId>
+		<artifactId>uqbar-xtend-parent</artifactId>
+		<version>2.6.2</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.uqbar-project</groupId>
+			<artifactId>arena-jface</artifactId>
+			<version>3.4-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+</project>
