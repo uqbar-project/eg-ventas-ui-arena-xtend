@@ -1,7 +1,8 @@
-package org.uqbar.arena.examples.ventas.ui
+package ar.edu.ventas.ui
 
-import org.uqbar.arena.bindings.DateAdapter
+import org.uqbar.arena.bindings.DateTransformer
 import org.uqbar.arena.examples.ventas.model.DetalleProducto
+import org.uqbar.arena.layout.ColumnLayout
 import org.uqbar.arena.layout.HorizontalLayout
 import org.uqbar.arena.widgets.Button
 import org.uqbar.arena.widgets.Label
@@ -10,7 +11,8 @@ import org.uqbar.arena.widgets.Panel
 import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.windows.WindowOwner
-import org.uqbar.arena.layout.ColumnLayout
+
+import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
 
 /**
  * @author jfernandes
@@ -25,17 +27,17 @@ class DetalleProductoWindow extends SimpleWindow<DetalleProducto> {
 		
 		new Label(mainPanel) => [
 			fontSize = 22
-			bindValueToProperty("producto.descripcion")	
+			value <=> "producto.descripcion"	
 		]
 		
 		new Panel(mainPanel) => [
 			layout = new ColumnLayout(2)
 			
 			new Label(it).text = "Codigo:"
-			new Label(it).bindValueToProperty("producto.codigo")
+			new Label(it).value <=> "producto.codigo"
 			
 			new Label(it).text = "Stock:"
-			new Label(it).bindValueToProperty("producto.stock")
+			new Label(it).value <=> "producto.stock"
 		]
 		
 		new Label(mainPanel) => [
@@ -48,13 +50,13 @@ class DetalleProductoWindow extends SimpleWindow<DetalleProducto> {
 			new Label(it).text = "Desde"	
 			new TextBox(it) => [
 				width = 80
-				bindValueToProperty("fechaDesde").transformer = new DateAdapter
+				(value <=> "fechaDesde").transformer = new DateTransformer
 			]	
 			
 			new Label(it).text = "Hasta"	
 			new TextBox(it)  => [
 				width = 80
-				bindValueToProperty("fechaHasta").transformer = new DateAdapter
+				(value <=> "fechaHasta").transformer = new DateTransformer
 			]
 			new Button(it) => [
 				caption = "Buscar"
@@ -62,10 +64,10 @@ class DetalleProductoWindow extends SimpleWindow<DetalleProducto> {
 			] 
 		]
 		new List(mainPanel) => [
-			bindItemsToProperty("pedidos")
+			items <=> "pedidos"
 			height = 250
 		]
-		new Label(mainPanel).bindValueToProperty("resumenBusqueda")
+		new Label(mainPanel).value <=> "resumenBusqueda"
 	}
 	
 	override protected addActions(Panel actionsPanel) {

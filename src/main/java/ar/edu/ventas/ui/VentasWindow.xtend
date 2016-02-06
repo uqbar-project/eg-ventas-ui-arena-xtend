@@ -1,4 +1,4 @@
-package org.uqbar.arena.examples.ventas.ui
+package ar.edu.ventas.ui
 
 import org.uqbar.arena.bindings.NotNullObservable
 import org.uqbar.arena.examples.ventas.model.DetalleProducto
@@ -14,6 +14,8 @@ import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.windows.WindowOwner
 
+import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
+
 /**
  * @author jfernandes
  */
@@ -23,6 +25,7 @@ class VentasWindow extends SimpleWindow<GestorVentas> {
 		super(owner, new GestorVentas)
 		title = "Gestor de Ventas"
 	}
+	
 	override createFormPanel(Panel mainPanel) {
 		new Panel(mainPanel) => [	
 			layout = new HorizontalLayout
@@ -35,21 +38,24 @@ class VentasWindow extends SimpleWindow<GestorVentas> {
 	
 	def crearPanelDeClientes(Panel mainPanel) {
 		new Panel(mainPanel) => [
-			new Label(it) => [ text = "Clientes" fontSize = 18 ]
-			new TextBox(it).bindValueToProperty("busquedaCliente")
+			new Label(it) => [ 
+				text = "Clientes" 
+				fontSize = 18
+			]
+			new TextBox(it).value <=> "busquedaCliente"
 			
 			new List(it) => [
-				bindItemsToProperty("clientes")
-				bindValueToProperty("clienteSeleccionado")
+				items <=> "clientes"
+				value <=> "clienteSeleccionado"
 				width = 220
 				height = 220
 			]
 			
 			new Label(it).text = "Nombre"
-			new TextBox(it).bindValueToProperty("nombreCliente")
+			new TextBox(it).value <=> "nombreCliente"
 			
 			new Label(it).text = "Apellido"
-			new TextBox(it).bindValueToProperty("apellidoCliente")
+			new TextBox(it).value <=> "apellidoCliente"
 			
 			new Button(it) => [
 				caption = "Agregar"
@@ -60,13 +66,16 @@ class VentasWindow extends SimpleWindow<GestorVentas> {
 	
 	def crearPanelDeProductos(Panel mainPanel) {
 		new Panel(mainPanel) => [
-			new Label(it) => [ text = "Productos" fontSize = 18 ]
-			new TextBox(it).bindValueToProperty("busquedaProducto")
+			new Label(it) => [ 
+				text = "Productos" 
+				fontSize = 18
+			]
+			new TextBox(it).value <=> "busquedaProducto"
 			new Panel(it) => [
 				layout = new HorizontalLayout
 				new List(it) => [
-					bindItemsToProperty("productos")
-					bindValueToProperty("productoSeleccionado")
+					items <=> "productos"
+					value <=> "productoSeleccionado"
 					width = 220
 					height = 220
 				]
@@ -82,7 +91,7 @@ class VentasWindow extends SimpleWindow<GestorVentas> {
 			]
 			
 			new Label(it).text = "Descripcion"
-			new TextBox(it).bindValueToProperty("descripcionDeProducto")
+			new TextBox(it).value <=> "descripcionDeProducto"
 			
 			new Button(it) => [
 				caption = "Agregar"
@@ -93,32 +102,44 @@ class VentasWindow extends SimpleWindow<GestorVentas> {
 	
 	def crearPanelDePedidos(Panel mainPanel) {
 		new Panel(mainPanel) => [
-			new Label(it) => [ text = "Pedidos" fontSize = 18 ]
+			new Label(it) => [ 
+				text = "Pedidos" 
+				fontSize = 18
+			]
 			
 			new RadioSelector(it) => [
-				bindItemsToProperty("criteriosOrdenPedidos")
-				bindValueToProperty("criterioSeleccionado")
+				items <=> "criteriosOrdenPedidos"
+				value <=> "criterioSeleccionado"
 			]
 			
 			new List(it) => [
-				bindItemsToProperty("pedidos")
+				items <=> "pedidos"
 				width = 300
 				height = 220
 			]
 			new Panel(it) => [
 				layout = new HorizontalLayout
 				new Label(it).text = "Cliente"
-				new Label(it) => [ bindValueToProperty("clienteSeleccionado"); width = 200 ]
+				new Label(it) => [ 
+					value <=> "clienteSeleccionado" 
+					width = 200
+				]
 			]	
 			new Panel(it) => [
 				layout = new HorizontalLayout		
 				new Label(it).text = "Producto"
-				new Label(it) => [ bindValueToProperty("productoSeleccionado.descripcion"); width = 200 ]
+				new Label(it) => [ 
+					value <=> "productoSeleccionado.descripcion"
+					width = 200
+				]
 			]
 			new Panel(it) => [
 				layout = new HorizontalLayout	
 				new Label(it).text = "Cantidad"
-				new Spinner(it) => [ bindValueToProperty("cantidadIngresada"); width = 200 ]
+				new Spinner(it) => [ 
+					value <=> "cantidadIngresada"
+					width = 200
+				]
 			]
 			
 			new Button(it) => [

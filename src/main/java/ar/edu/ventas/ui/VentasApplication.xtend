@@ -1,4 +1,4 @@
-package org.uqbar.arena.examples.ventas.ui
+package ar.edu.ventas.ui
 
 import org.uqbar.arena.Application
 
