@@ -9,7 +9,7 @@ Una aplicación que vende
 
 Esto va generando pedidos en una determinada fecha.
 
-## Conceptos que se ven
+## Conceptos interesantes
 
 * Tiene un layout complejo
 * Tiene un application model que maneja el estado no trivial del caso de uso de la venta
