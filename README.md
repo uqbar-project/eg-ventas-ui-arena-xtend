@@ -11,7 +11,7 @@ Esto va generando pedidos en una determinada fecha.
 
 ## Conceptos que se ven
 
-* Layout no trivial
+* Tiene un layout complejo
 * Tiene un application model que maneja el estado no trivial del caso de uso de la venta
 * Hay widgets interesantes como el spinner, el list box, el radio button que establece el criterio de ordenamiento
 
