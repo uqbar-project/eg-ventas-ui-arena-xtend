@@ -9,14 +9,14 @@
 	<parent>
 		<groupId>org.uqbar-project</groupId>
 		<artifactId>arena-xtend-parent</artifactId>
-		<version>3.6.2</version>
+		<version>3.6.3</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.uqbar-project</groupId>
-			<artifactId>ventas-domain-xtend</artifactId>
-			<version>1.0.1</version>
+			<artifactId>eg-ventas-domain-xtend</artifactId>
+			<version>1.0.2</version>
 		</dependency>
 	</dependencies>
 

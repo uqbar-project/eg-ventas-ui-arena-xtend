@@ -144,6 +144,7 @@ class VentasWindow extends SimpleWindow<GestorVentas> {
 			
 			new Button(it) => [
 				caption = "Crear"
+				enabled <=> "puedeCrearPedido"
 				onClick[| modelObject.crearPedido ]				
 			]
 		]
