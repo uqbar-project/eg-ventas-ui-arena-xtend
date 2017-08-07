@@ -1,5 +1,7 @@
 # Gestor de ventas
 
+[![Build Status](https://travis-ci.org/uqbar-project/eg-ventas-ui-arena-xtend.svg?branch=master)](https://travis-ci.org/uqbar-project/eg-ventas-ui-arena-xtend)
+
 Una aplicación que vende
 
 * un producto
